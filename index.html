@@ -8,12 +8,12 @@
     <style>
         /* --- BRAND COLOR PALETTE --- */
         :root {
-            --brand-terracota: #DB643A; /*  */
-            --brand-beige: #F3E9DD; /*  */
-            --brand-brown: #3B2A21; /*  */
-            --text-light: #F3E9DD; /*  */
+            --brand-terracota: #DB643A; 
+            --brand-beige: #F3E9DD; 
+            --brand-brown: #3B2A21; 
+            --text-light: #F3E9DD; 
             --wa-green: #25D366;
-            --font-main: 'Nunito', sans-serif; /* Rounded, friendly font [cite: 66] */
+            --font-main: 'Nunito', sans-serif; 
         }
 
         * {
@@ -24,8 +24,8 @@
 
         body {
             font-family: var(--font-main);
-            color: var(--brand-brown); /*  */
-            background-color: var(--brand-beige); /*  */
+            color: var(--brand-brown); 
+            background-color: var(--brand-beige); 
             line-height: 1.6;
         }
 
@@ -44,15 +44,15 @@
             padding: 0 20px;
         }
 
-        /* --- HEADER & NAV --- */
+        /* --- HEADER & NAV (UPDATED FOR DARK LOGO) --- */
         header {
-            background-color: var(--brand-beige); /*  */
-            padding: 20px 0;
+            background-color: #000000; /* Black to blend with the new logo */
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(59, 42, 33, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         nav {
@@ -62,28 +62,27 @@
         }
 
         .logo img {
-            height: 60px; 
+            height: 70px; /* Made slightly larger for better visibility */
             width: auto;
         }
 
         .nav-links {
             display: flex;
             gap: 30px;
-            font-weight: 800; /* Bold typography [cite: 65] */
-            color: var(--brand-brown); /*  */
+            font-weight: 800; 
+            color: var(--brand-beige); /* Changed to beige to pop against black */
             text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            color: var(--brand-terracota); /*  */
+            color: var(--brand-terracota); 
         }
 
         /* --- HERO SECTION --- */
         .hero {
             padding: 180px 0 120px; 
-            background-color: var(--brand-terracota); /*  */
-            /* Optional: Add your background image back here with a blend mode if desired */
-            color: var(--brand-beige); /*  */
+            background-color: var(--brand-terracota); 
+            color: var(--brand-beige); 
             text-align: center;
         }
 
@@ -106,15 +105,17 @@
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             padding: 15px 35px;
-            background-color: var(--brand-brown); /*  */
-            color: var(--brand-beige); /*  */
-            border-radius: 50px; /* Rounded shapes [cite: 66] */
+            background-color: var(--brand-brown); 
+            color: var(--brand-beige); 
+            border-radius: 50px; 
             font-weight: 800;
             font-size: 1.2rem;
             transition: 0.3s;
             border: 2px solid var(--brand-brown);
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -140,14 +141,14 @@
         .section-title {
             text-align: center;
             font-size: 2.5rem;
-            color: var(--brand-terracota); /*  */
+            color: var(--brand-terracota); 
             margin-bottom: 50px;
             font-weight: 900;
         }
 
         .pillar-card {
             background: #ffffff;
-            border-radius: 20px; /* Rounded shapes [cite: 66] */
+            border-radius: 20px; 
             padding: 40px;
             margin-bottom: 40px;
             display: grid;
@@ -155,7 +156,7 @@
             align-items: center;
             gap: 30px;
             box-shadow: 0 10px 30px rgba(59, 42, 33, 0.08);
-            border-left: 8px solid var(--brand-terracota); /*  */
+            border-left: 8px solid var(--brand-terracota); 
             transition: 0.3s;
         }
 
@@ -170,7 +171,7 @@
         }
 
         .pillar-card h2 {
-            color: var(--brand-brown); /*  */
+            color: var(--brand-brown); 
             margin-bottom: 10px;
             font-size: 1.8rem;
             font-weight: 900;
@@ -178,18 +179,31 @@
 
         .pillar-card p {
             font-size: 1.1rem;
-            color: var(--brand-brown); /*  */
+            color: var(--brand-brown); 
             opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .tag-list {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--brand-terracota);
             margin-bottom: 15px;
         }
 
         /* --- FOOTER & FLOATING WA --- */
         footer {
-            background-color: var(--brand-brown); /*  */
-            color: var(--brand-beige); /*  */
+            background-color: var(--brand-brown); 
+            color: var(--brand-beige); 
             padding: 50px 0;
             text-align: center;
             font-weight: 600;
+        }
+
+        .footer-details {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         .floating-wa {
@@ -229,7 +243,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="REPLACE_WITH_YOUR_LOGO_URL.png" alt="La Sonrisa Logo">
+                    <img src="logo-dark.jpg" alt="La Sonrisa Logo">
                 </div>
                 <ul class="nav-links">
                     <li><a href="#origen">Origen</a></li>
@@ -242,7 +256,10 @@
 
     <section class="hero">
         <div class="container">
-            <h1>NATURALMENTE FELIZ</h1> <p>La Sonrisa nace en México con la idea de compartir la felicidad de lo natural. Cada nuez es un recordatorio de origen, sabor y bienestar, pensado para disfrutarse en momentos simples de la vida.</p> <a href="https://wa.me/528114112100" class="btn btn-whatsapp" target="_blank">
+            <h1>NATURALMENTE FELIZ</h1> 
+            <p>La Sonrisa nace en México con la idea de compartir la felicidad de lo natural. Cada nuez es un recordatorio de origen, sabor y bienestar, pensado para disfrutarse en momentos simples de la vida.</p> 
+            
+            <a href="https://wa.me/528114112100" class="btn btn-whatsapp" target="_blank">
                 Haz tu pedido
             </a>
         </div>
@@ -250,34 +267,48 @@
 
     <section class="pillars container" id="productos">
         
-        <h2 class="section-title">Hechas para compartir</h2> <div class="pillar-card" id="origen">
+        <h2 class="section-title">Hechas para compartir</h2> 
+
+        <div class="pillar-card" id="origen">
             <div class="pillar-icon">🇲🇽</div>
             <div class="pillar-info">
-                <h2>Cosecha Mexicana</h2> <p>Nuez pecana de la más alta calidad, cultivada con calidez y dedicación. Ofrecemos suministro confiable para socios comerciales que buscan autenticidad.</p> </div>
+                <h2>Cosecha Mexicana</h2> 
+                <p>Nuez pecana de la más alta calidad, cultivada con calidez y dedicación. Ofrecemos suministro confiable para socios comerciales.</p> 
+                <p class="tag-list">Variedades: Wichita • Western • Pawnee • Cheyenne</p>
+            </div>
             <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20ventas%20comerciales" class="btn" target="_blank">Cotizar</a>
         </div>
 
         <div class="pillar-card">
             <div class="pillar-icon">🌿</div>
             <div class="pillar-info">
-                <h2>Nuez Pecana</h2> <p>Un producto nutritivo y lleno de sabor. Procesamiento de vanguardia y soluciones agrícolas para aprovechar al máximo las bondades de la naturaleza.</p> </div>
+                <h2>Nuez Pecana Premium</h2> 
+                <p>Un producto nutritivo y lleno de sabor, procesado con altos estándares para aprovechar al máximo las bondades de la naturaleza.</p> 
+                <p class="tag-list">Calibres: Corazones • Medianos • Chicos • Polvo</p>
+            </div>
             <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20procesamiento" class="btn" target="_blank">Contactar</a>
         </div>
 
         <div class="pillar-card">
-            <div class="pillar-icon">🛒</div>
+            <div class="pillar-icon">📄</div>
             <div class="pillar-info">
-                <h2>Venta Directa</h2>
-                <p>Lo simple y natural también puede inspirar felicidad. Accede a nuestro catálogo de productos frescos directamente a través de WhatsApp.</p> </div>
-            <a href="https://wa.me/528114112100" class="btn btn-whatsapp" target="_blank">Ver Catálogo</a>
+                <h2>Catálogo de Productos</h2>
+                <p>Conoce a detalle todas nuestras presentaciones, gramajes y calibres disponibles para distribución o venta directa.</p> 
+            </div>
+            <a href="catalogo.pdf" class="btn btn-whatsapp" target="_blank">Ver Catálogo PDF</a>
         </div>
 
     </section>
 
-    <footer>
+    <footer id="contacto">
         <div class="container">
             <p>&copy; 2026 La Sonrisa. Todos los derechos reservados.</p>
-            <p>Más que un alimento, un recordatorio de que lo auténtico siempre deja un buen sabor.</p> </div>
+            <p>Más que un alimento, un recordatorio de que lo auténtico siempre deja un buen sabor.</p> 
+            <div class="footer-details">
+                <p>Terrapark Parque Industrial • Santa Catarina, Nuevo León CP 66367</p>
+                <p>Tel: +52 811 411 2100</p>
+            </div>
+        </div>
     </footer>
 
     <a href="https://wa.me/528114112100" class="floating-wa" target="_blank">
