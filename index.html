@@ -44,15 +44,15 @@
             padding: 0 20px;
         }
 
-        /* --- HEADER & NAV (UPDATED FOR DARK LOGO) --- */
+        /* --- HEADER & NAV (REVERTED TO BEIGE BANNER) --- */
         header {
-            background-color: #000000; /* Black to blend with the new logo */
+            background-color: var(--brand-beige); 
             padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 10px rgba(59, 42, 33, 0.1);
         }
 
         nav {
@@ -62,7 +62,7 @@
         }
 
         .logo img {
-            height: 70px; /* Made slightly larger for better visibility */
+            height: 70px; 
             width: auto;
         }
 
@@ -70,7 +70,7 @@
             display: flex;
             gap: 30px;
             font-weight: 800; 
-            color: var(--brand-beige); /* Changed to beige to pop against black */
+            color: var(--brand-brown); 
             text-transform: uppercase;
         }
 
@@ -243,7 +243,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="logo-dark.jpg" alt="La Sonrisa Logo">
+                    <img src="logo-dark.png" alt="La Sonrisa Logo">
                 </div>
                 <ul class="nav-links">
                     <li><a href="#origen">Origen</a></li>
