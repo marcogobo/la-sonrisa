@@ -363,22 +363,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="contact-section">
         <div class="container form-container">
-            <h2>Cotización</h2>
-            <form id="lead-capture-form">
+            <h2>Cotización Comercial</h2>
+            
+            <!-- Replace YOUR_UNIQUE_CODE below with your actual Formspree endpoint -->
+            <form id="lead-capture-form" action="https://formspree.io/f/YOUR_UNIQUE_CODE" method="POST">
+                
                 <div class="form-group">
-                    <input type="text" id="contact-name" placeholder="Nombre completo" required>
+                    <input type="text" id="contact-name" name="Nombre" placeholder="Nombre completo" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="business-name" placeholder="Empresa" required>
+                    <input type="text" id="business-name" name="Empresa" placeholder="Empresa o Panadería" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="contact-email" placeholder="Correo electrónico" required>
+                    <input type="email" id="contact-email" name="Email" placeholder="Correo electrónico" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" id="contact-phone" placeholder="Teléfono a 10 dígitos" required>
+                    <input type="tel" id="contact-phone" name="Teléfono" placeholder="Teléfono a 10 dígitos" required>
                 </div>
                 <div class="form-group">
-                    <select id="volume-estimate">
+                    <select id="volume-estimate" name="Volumen">
                         <option value="">Volumen estimado...</option>
                         <option value="Muestras">Muestras para pruebas</option>
                         <option value="Menor a 100kg">Menor a 100 kg</option>
@@ -388,6 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <button type="submit" class="btn form-submit-btn">Solicitar Cotización</button>
             </form>
+
         </div>
     </section>
 
