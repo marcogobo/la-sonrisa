@@ -199,6 +199,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin-bottom: 15px;
         }
 
+        /* --- CONTACT FORM --- */
+        .contact-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--brand-beige);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(59, 42, 33, 0.08);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: var(--brand-terracota);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            color: var(--brand-brown);
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--brand-terracota);
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            border: none;
+        }
+
         /* --- FOOTER & FLOATING WA --- */
         footer {
             background-color: var(--brand-brown); 
@@ -310,6 +359,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="catalogo.pdf" class="btn btn-whatsapp" target="_blank">Ver Catálogo PDF</a>
         </div>
 
+    </section>
+
+    <section class="contact-section">
+        <div class="container form-container">
+            <h2>Cotización Comercial</h2>
+            <form id="lead-capture-form">
+                <div class="form-group">
+                    <input type="text" id="contact-name" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="business-name" placeholder="Empresa o Panadería" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="contact-email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="contact-phone" placeholder="Teléfono a 10 dígitos" required>
+                </div>
+                <div class="form-group">
+                    <select id="volume-estimate">
+                        <option value="">Volumen estimado...</option>
+                        <option value="Muestras">Muestras para pruebas</option>
+                        <option value="Menor a 100kg">Menor a 100 kg</option>
+                        <option value="100kg a 500kg">100 kg - 500 kg</option>
+                        <option value="Volumen Industrial">Volumen Industrial / Tarimas</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn form-submit-btn">Solicitar Cotización</button>
+            </form>
+        </div>
     </section>
 
     <footer id="contacto">
