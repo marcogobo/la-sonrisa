@@ -155,6 +155,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: translateY(-2px);
         }
 
+        /* Botón pequeño para descargar catálogo */
+        .btn-small {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--brand-terracota);
+            color: #ffffff;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: var(--font-heading);
+            transition: all 0.3s ease;
+            border: 2px solid var(--brand-terracota);
+            cursor: pointer;
+        }
+
+        .btn-small:hover {
+            background-color: transparent;
+            color: var(--brand-terracota);
+        }
+
         /* --- ESSENCE SECTION (NEW) --- */
         .essence {
             padding: 100px 0;
@@ -222,7 +243,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-position: center;
         }
 
-        .img-1 { background-image: url('https://images.unsplash.com/photo-1628189851614-232a93902f23?q=80&w=800&auto=format&fit=crop'); }
+        /* --- IMÁGENES DE LOS PILARES --- */
+        /* Aquí se actualizó la URL por la imagen local */
+        .img-1 { background-image: url('Stock Foto Sonrisa.png'); }
         .img-2 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'); }
         .img-3 { background-image: url('https://images.unsplash.com/photo-1563804473852-c0e09d13dbb3?q=80&w=800&auto=format&fit=crop'); }
 
@@ -405,7 +428,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="section-title">Hechas para compartir</h2> 
 
             <div class="pillar-grid">
-                <!-- Card 1 -->
+                <!-- Card 1 (Imagen actualizada a Stock Foto Sonrisa.png) -->
                 <div class="pillar-card">
                     <div class="pillar-img img-1"></div>
                     <div class="pillar-info">
@@ -423,12 +446,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3 (Catálogo agregado aquí) -->
                 <div class="pillar-card">
                     <div class="pillar-img img-3"></div>
                     <div class="pillar-info">
                         <h3>Catálogo Técnico</h3>
                         <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western) y calibres disponibles para distribución o formulación.</p> 
+                        <!-- Botón para descargar el PDF -->
+                        <a href="Catalogo La Sonrisa.pdf" download class="btn-small">Descargar Catálogo</a>
                     </div>
                 </div>
             </div>
