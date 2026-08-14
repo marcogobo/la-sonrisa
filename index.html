@@ -107,21 +107,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: var(--brand-terracota); 
         }
 
+        /* --- SECCIONES TIPO SLIDE (FULL SCREEN) --- */
+        .hero, .essence, .pillars, .contact-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 75px; /* Compensa la altura del header fijo */
+            padding-bottom: 40px;
+        }
+
+        .hero .container, 
+        .pillars .container, 
+        .contact-section .container {
+            width: 100%;
+        }
+
         /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(rgba(59, 42, 33, 0.6), rgba(59, 42, 33, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
-            min-height: 100vh; /* Hace que la sección cubra el 100% de la pantalla visible */
-            display: flex; /* Permite centrar el contenido fácilmente */
-            align-items: center; /* Centra el texto verticalmente */
-            padding-top: 75px; /* Da espacio para que el menú fijo no tape el texto */
             color: var(--brand-beige); 
             text-align: center;
-        }
-
-        /* Ajuste para que el contenedor dentro del hero se centre bien */
-        .hero .container {
-            margin: 0 auto;
-            width: 100%;
         }
 
         .hero h1 {
@@ -193,11 +198,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- ESSENCE SECTION --- */
         .essence {
-            padding: 100px 0;
+            background-color: var(--brand-beige);
+        }
+
+        .essence-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+            width: 100%;
         }
 
         .essence-text h2 {
@@ -222,7 +231,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- PILLAR SECTIONS (COLUMNS) --- */
         .pillars { 
-            padding: 80px 0; 
             background-color: #ffffff;
         }
 
@@ -270,7 +278,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .pillar-img {
-            height: 220px; /* La altura base de tus imágenes de columna */
+            height: 220px; 
             background-size: cover;
             background-position: center;
         }
@@ -296,7 +304,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- CONTACT FORM --- */
         .contact-section {
-            padding: 100px 0;
             background-color: var(--brand-beige);
         }
 
@@ -399,8 +406,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 900px) {
-            .essence { grid-template-columns: 1fr; text-align: center; }
+            .essence-grid { grid-template-columns: 1fr; text-align: center; }
             .pillar-grid { grid-template-columns: 1fr; }
+            /* En pantallas pequeñas, relajamos la altura para evitar que el contenido se corte */
+            .hero, .essence, .pillars, .contact-section { min-height: auto; padding: 100px 0; }
         }
 
         @media (max-width: 768px) {
@@ -443,13 +452,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section class="essence container" id="esencia">
-        <div class="essence-text">
-            <h2>Lo auténtico siempre deja un buen sabor.</h2>
-            <p>Con un estilo visual cálido que evoca bienestar y frescura, La Sonrisa conecta con sus raíces para compartir un mensaje claro: lo simple y natural también puede inspirar felicidad.</p>
-            <p>Nuestra identidad es limpia, cercana y moderna. Más que un alimento, somos una marca mexicana de nuez pecana que transmite la alegría de lo natural en cada detalle.</p>
+    <section class="essence" id="esencia">
+        <div class="container essence-grid">
+            <div class="essence-text">
+                <h2>Lo auténtico siempre deja un buen sabor.</h2>
+                <p>Con un estilo visual cálido que evoca bienestar y frescura, La Sonrisa conecta con sus raíces para compartir un mensaje claro: lo simple y natural también puede inspirar felicidad.</p>
+                <p>Nuestra identidad es limpia, cercana y moderna. Más que un alimento, somos una marca mexicana de nuez pecana que transmite la alegría de lo natural en cada detalle.</p>
+            </div>
+            <div class="essence-img"></div>
         </div>
-        <div class="essence-img"></div>
     </section>
 
     <section class="pillars" id="soluciones">
