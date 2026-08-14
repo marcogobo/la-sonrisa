@@ -81,11 +81,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             align-items: center;
         }
 
-        .logo h2 {
-            font-weight: 900;
-            font-size: 1.5rem;
-            color: var(--brand-terracota);
-            letter-spacing: -0.5px;
+        /* Estilos actualizados para el Logo en el Header */
+        .logo img {
+            max-height: 45px; /* Puedes ajustar este número si lo quieres más grande o pequeño */
+            width: auto;
+            display: block;
         }
 
         .nav-links {
@@ -155,7 +155,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: translateY(-2px);
         }
 
-        /* Botón pequeño para descargar catálogo */
         .btn-small {
             display: inline-block;
             margin-top: 15px;
@@ -176,7 +175,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: var(--brand-terracota);
         }
 
-        /* --- ESSENCE SECTION (NEW) --- */
+        /* --- ESSENCE SECTION --- */
         .essence {
             padding: 100px 0;
             display: grid;
@@ -243,8 +242,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-position: center;
         }
 
-        /* --- IMÁGENES DE LOS PILARES --- */
-        /* Aquí se actualizó la URL por la imagen local */
         .img-1 { background-image: url('Stock Foto Sonrisa.png'); }
         .img-2 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'); }
         .img-3 { background-image: url('https://images.unsplash.com/photo-1563804473852-c0e09d13dbb3?q=80&w=800&auto=format&fit=crop'); }
@@ -326,12 +323,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: center;
         }
 
-        .footer-logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--brand-terracota);
-            margin-bottom: 15px;
+        /* Estilos actualizados para el Logo en el Footer */
+        .footer-logo img {
+            max-height: 55px; /* Un poco más grande en el footer, puedes ajustarlo */
+            width: auto;
+            margin: 0 auto 15px auto;
+            display: block;
         }
 
         .footer-details {
@@ -392,7 +389,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <h2>LA SONRISA</h2>
+                    <!-- Aquí se agregó tu logo -->
+                    <a href="#"><img src="logo-dark.png" alt="La Sonrisa"></a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#esencia">Esencia</a></li>
@@ -428,7 +426,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="section-title">Hechas para compartir</h2> 
 
             <div class="pillar-grid">
-                <!-- Card 1 (Imagen actualizada a Stock Foto Sonrisa.png) -->
                 <div class="pillar-card">
                     <div class="pillar-img img-1"></div>
                     <div class="pillar-info">
@@ -437,7 +434,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="pillar-card">
                     <div class="pillar-img img-2"></div>
                     <div class="pillar-info">
@@ -446,13 +442,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- Card 3 (Catálogo agregado aquí) -->
                 <div class="pillar-card">
                     <div class="pillar-img img-3"></div>
                     <div class="pillar-info">
                         <h3>Catálogo Técnico</h3>
                         <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western) y calibres disponibles para distribución o formulación.</p> 
-                        <!-- Botón para descargar el PDF -->
                         <a href="Catalogo La Sonrisa.pdf" download class="btn-small">Descargar Catálogo</a>
                     </div>
                 </div>
@@ -464,9 +458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container form-container">
             <h2>Cotización Comercial</h2>
             
-            <!-- Kept exactly as configured for GTM and Formspree -->
             <form id="lead-capture-form" action="https://formspree.io/f/myegpyng" method="POST">
-                
                 <div class="form-group">
                     <input type="text" id="contact-name" name="Nombre" placeholder="Nombre completo" required>
                 </div>
@@ -495,7 +487,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <footer id="contacto">
         <div class="container">
-            <div class="footer-logo">LA SONRISA</div>
+            <div class="footer-logo">
+                <!-- Aquí también se agregó tu logo -->
+                <img src="logo-dark.png" alt="La Sonrisa">
+            </div>
             <p>Más que un alimento, un recordatorio de que lo auténtico siempre deja un buen sabor.</p> 
             <div class="footer-details">
                 <p>Terrapark Parque Industrial • Santa Catarina, Nuevo León CP 66367</p>
