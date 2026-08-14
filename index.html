@@ -11,24 +11,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Sonrisa | Nuez Pecana Premium para la Industria</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <title>La Sonrisa | Naturalmente Feliz</title>
+    
+    <!-- Modern Typography: Montserrat for headings (warm/geometric), Inter for body (sleek/readable) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- BRAND COLOR PALETTE & VARIABLES --- */
+        /* --- BRAND COLOR PALETTE --- */
         :root {
             --brand-terracota: #DB643A; 
-            --brand-beige: #F9F4EF; 
-            --brand-brown: #2C1E16; 
-            --brand-accent: #E8835E;
+            --brand-beige: #F3E9DD; 
+            --brand-brown: #3B2A21; 
             --wa-green: #25D366;
-            --font-main: 'Nunito', sans-serif; 
-            --shadow-soft: 0 12px 40px rgba(44, 30, 22, 0.08);
-            --shadow-hover: 0 20px 50px rgba(44, 30, 22, 0.15);
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif; 
+            --shadow-soft: 0 10px 30px rgba(59, 42, 33, 0.08);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         * {
             box-sizing: border-box;
@@ -37,11 +37,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         body {
-            font-family: var(--font-main);
+            font-family: var(--font-body);
             color: var(--brand-brown); 
             background-color: var(--brand-beige); 
-            line-height: 1.7;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .nav-links {
+            font-family: var(--font-heading);
         }
 
         a {
@@ -54,21 +58,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .container {
             width: 90%;
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         /* --- HEADER & NAV --- */
         header {
-            background-color: rgba(249, 244, 239, 0.95); 
+            background-color: rgba(243, 233, 221, 0.95); 
             backdrop-filter: blur(10px);
-            padding: 12px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(44, 30, 22, 0.05);
+            border-bottom: 1px solid rgba(59, 42, 33, 0.05);
         }
 
         nav {
@@ -77,19 +81,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             align-items: center;
         }
 
-        .logo img {
-            height: 60px; 
-            width: auto;
+        .logo h2 {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--brand-terracota);
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 35px;
-            font-weight: 800; 
+            gap: 30px;
+            font-weight: 700; 
             color: var(--brand-brown); 
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a:hover {
@@ -98,18 +104,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- HERO SECTION --- */
         .hero {
-            /* Replace the URL below with a high-quality image of your orchard or facility */
-            background: linear-gradient(rgba(44, 30, 22, 0.8), rgba(44, 30, 22, 0.8)), url('https://images.unsplash.com/photo-1599557029584-6997ce0824b2?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
-            padding: 220px 0 160px; 
-            color: #ffffff; 
+            background: linear-gradient(rgba(59, 42, 33, 0.6), rgba(59, 42, 33, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            padding: 200px 0 140px; 
+            color: var(--brand-beige); 
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 900;
-            margin-bottom: 25px;
-            line-height: 1.05;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
             letter-spacing: -1px;
         }
 
@@ -118,11 +124,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 400;
-            max-width: 700px;
-            margin: 0 auto 45px;
-            color: rgba(255, 255, 255, 0.9);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
         }
 
         /* --- BUTTONS --- */
@@ -130,145 +136,133 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 16px 40px;
+            gap: 10px;
+            padding: 16px 35px;
             background-color: var(--brand-terracota); 
             color: #ffffff; 
-            border-radius: 8px; 
-            font-weight: 800;
+            border-radius: 50px; 
+            font-weight: 700;
             font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: var(--font-heading);
+            transition: all 0.3s ease;
             border: 2px solid var(--brand-terracota);
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: var(--brand-accent);
-            border-color: var(--brand-accent);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(219, 100, 58, 0.4);
-        }
-
-        .btn-outline {
             background-color: transparent;
-            color: var(--brand-brown);
-            border-color: var(--brand-brown);
+            color: var(--brand-terracota);
+            transform: translateY(-2px);
         }
 
-        .btn-outline:hover {
-            background-color: var(--brand-brown);
-            color: #ffffff;
-            box-shadow: 0 10px 25px rgba(44, 30, 22, 0.3);
+        /* --- ESSENCE SECTION (NEW) --- */
+        .essence {
+            padding: 100px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .essence-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--brand-brown);
+        }
+
+        .essence-text p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: rgba(59, 42, 33, 0.8);
+        }
+
+        .essence-img {
+            width: 100%;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1596489815418-2c6c4c015b6d?q=80&w=1000&auto=format&fit=crop') center/cover;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
         }
 
         /* --- PILLAR SECTIONS --- */
-        .pillars { padding: 100px 0; }
+        .pillars { 
+            padding: 80px 0; 
+            background-color: #ffffff;
+        }
 
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--brand-brown); 
             margin-bottom: 60px;
             font-weight: 900;
-            letter-spacing: -0.5px;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .pillar-card {
-            background: #ffffff;
+            background: var(--brand-beige);
             border-radius: 16px; 
-            padding: 45px;
-            margin-bottom: 30px;
-            display: grid;
-            grid-template-columns: 80px 1fr 220px; 
-            align-items: center;
-            gap: 40px;
+            overflow: hidden;
             box-shadow: var(--shadow-soft);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
         }
 
         .pillar-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-10px);
         }
 
-        .pillar-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(219, 100, 58, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--brand-terracota);
+        .pillar-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
         }
 
-        .pillar-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: currentColor;
+        .img-1 { background-image: url('https://images.unsplash.com/photo-1628189851614-232a93902f23?q=80&w=800&auto=format&fit=crop'); }
+        .img-2 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'); }
+        .img-3 { background-image: url('https://images.unsplash.com/photo-1563804473852-c0e09d13dbb3?q=80&w=800&auto=format&fit=crop'); }
+
+        .pillar-info {
+            padding: 30px;
         }
 
-        .pillar-card h2 {
-            color: var(--brand-brown); 
-            margin-bottom: 12px;
-            font-size: 1.8rem;
-            font-weight: 900;
+        .pillar-card h3 {
+            color: var(--brand-terracota); 
+            margin-bottom: 10px;
+            font-size: 1.4rem;
         }
 
         .pillar-card p {
-            font-size: 1.05rem;
-            color: #555; 
-            margin-bottom: 15px;
-        }
-
-        .tag-list {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tag-list span {
-            background-color: var(--brand-beige);
-            color: var(--brand-terracota);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 800;
+            font-size: 1rem;
+            color: rgba(59, 42, 33, 0.8);
+            margin-bottom: 20px;
         }
 
         /* --- CONTACT FORM --- */
         .contact-section {
             padding: 100px 0;
-            background-color: var(--brand-brown);
-            color: #ffffff;
+            background-color: var(--brand-beige);
         }
 
         .form-container {
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto;
             background: #ffffff;
             padding: 50px;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: var(--shadow-soft);
         }
 
-        .contact-section h2 {
-            text-align: center;
-            color: #ffffff;
-            margin-bottom: 40px;
-            font-size: 2.8rem;
-            font-weight: 900;
-        }
-
-        .form-title {
+        .form-container h2 {
             text-align: center;
             color: var(--brand-brown);
             margin-bottom: 30px;
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 900;
         }
 
         .form-group {
@@ -279,13 +273,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .form-group select {
             width: 100%;
             padding: 16px;
-            border: 2px solid #EEEEEE;
+            border: 1px solid rgba(59, 42, 33, 0.2);
             border-radius: 8px;
-            font-family: var(--font-main);
+            font-family: var(--font-body);
             font-size: 1rem;
             color: var(--brand-brown);
-            background-color: #FAFAFA;
-            transition: 0.3s;
+            background-color: #fafafa;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus, 
@@ -297,33 +291,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .form-submit-btn {
             width: 100%;
+            border-radius: 8px;
             margin-top: 10px;
         }
 
         /* --- FOOTER & FLOATING WA --- */
         footer {
-            background-color: #1A120D; 
-            color: rgba(255,255,255,0.7); 
+            background-color: var(--brand-brown); 
+            color: var(--brand-beige); 
             padding: 60px 0 40px;
             text-align: center;
         }
 
         .footer-logo {
-            margin-bottom: 20px;
-            opacity: 0.5;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--brand-terracota);
+            margin-bottom: 15px;
         }
 
         .footer-details {
-            margin-top: 25px;
+            margin-top: 20px;
             font-size: 0.95rem;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            opacity: 0.8;
         }
 
         .footer-details a {
-            color: #ffffff;
-            font-weight: 800;
+            color: var(--brand-terracota);
+            font-weight: 600;
         }
 
         .floating-wa {
@@ -339,7 +335,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-color: var(--wa-green);
             border-radius: 50%;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
         
         .floating-wa svg {
@@ -349,30 +345,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .floating-wa:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
         }
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 900px) {
-            .pillar-card {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding: 40px 30px;
-                gap: 25px;
-            }
-            .pillar-icon { 
-                margin: 0 auto; 
-            }
-            .tag-list {
-                justify-content: center;
-            }
+            .essence { grid-template-columns: 1fr; text-align: center; }
+            .pillar-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; } 
-            .hero { padding: 160px 0 100px; }
             .hero h1 { font-size: 3rem; }
-            .contact-section h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -386,12 +369,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <!-- Assuming you have a logo image, otherwise you can use text -->
-                    <img src="logo-dark.png" alt="La Sonrisa Logo">
+                    <h2>LA SONRISA</h2>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#origen">Origen</a></li>
-                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#esencia">Esencia</a></li>
+                    <li><a href="#soluciones">Soluciones</a></li>
                     <li><a href="https://wa.me/528114112100" target="_blank" class="track-wa-click">Contacto</a></li>
                 </ul>
             </nav>
@@ -400,8 +382,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="hero">
         <div class="container">
-            <h1>Calidad Industrial.<br><span>Origen Natural.</span></h1> 
-            <p>Suministro confiable de nuez pecana premium para la industria alimentaria. Procesamiento de alto volumen diseñado para superar los estándares de su negocio.</p> 
+            <h1>Naturalmente <span>Feliz</span></h1> 
+            <p>La Sonrisa nace en México con la idea de compartir la felicidad de lo natural. Cada nuez es un recordatorio de origen, sabor y bienestar, pensado para disfrutarse en momentos simples de la vida.</p> 
             
             <a href="#cotizacion" class="btn">
                 Solicitar Cotización B2B
@@ -409,61 +391,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section class="pillars container" id="productos">
-        
-        <h2 class="section-title">Soluciones Comerciales</h2> 
+    <section class="essence container" id="esencia">
+        <div class="essence-text">
+            <h2>Lo auténtico siempre deja un buen sabor.</h2>
+            <p>Con un estilo visual cálido que evoca bienestar y frescura, La Sonrisa conecta con sus raíces para compartir un mensaje claro: lo simple y natural también puede inspirar felicidad.</p>
+            <p>Nuestra identidad es limpia, cercana y moderna. Más que un alimento, somos una marca mexicana de nuez pecana que transmite la alegría de lo natural en cada detalle.</p>
+        </div>
+        <div class="essence-img"></div>
+    </section>
 
-        <div class="pillar-card" id="origen">
-            <div class="pillar-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-            </div>
-            <div class="pillar-info">
-                <h2>Cosecha 100% Mexicana</h2> 
-                <p>Abastecimiento estable de nuez pecana cultivada con dedicación. Desarrollamos relaciones sólidas para garantizar el suministro a su cadena de producción.</p> 
-                <div class="tag-list">
-                    <span>Wichita</span> <span>Western</span> <span>Pawnee</span> <span>Cheyenne</span>
+    <section class="pillars" id="soluciones">
+        <div class="container">
+            <h2 class="section-title">Hechas para compartir</h2> 
+
+            <div class="pillar-grid">
+                <!-- Card 1 -->
+                <div class="pillar-card">
+                    <div class="pillar-img img-1"></div>
+                    <div class="pillar-info">
+                        <h3>Cosecha Mexicana</h3> 
+                        <p>Nuez pecana de la más alta calidad, cultivada con calidez y dedicación. Ofrecemos suministro confiable para socios comerciales y la industria alimentaria.</p> 
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="pillar-card">
+                    <div class="pillar-img img-2"></div>
+                    <div class="pillar-info">
+                        <h3>Procesamiento Industrial</h3> 
+                        <p>Infraestructura moderna que garantiza la inocuidad y calidad en cada lote. Un producto nutritivo y lleno de sabor, procesado con altos estándares.</p> 
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="pillar-card">
+                    <div class="pillar-img img-3"></div>
+                    <div class="pillar-info">
+                        <h3>Catálogo Técnico</h3>
+                        <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western) y calibres disponibles para distribución o formulación.</p> 
+                    </div>
                 </div>
             </div>
-            <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20ventas%20comerciales" class="btn btn-outline track-wa-click" target="_blank">Contactar</a>
         </div>
-
-        <div class="pillar-card">
-            <div class="pillar-icon">
-                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm4-4H7v-2h9v2zm0-4H7V7h9v2z"/></svg>
-            </div>
-            <div class="pillar-info">
-                <h2>Procesamiento Industrial</h2> 
-                <p>Instalaciones modernizadas con cuartos fríos y áreas de limpieza especializadas para garantizar la inocuidad y calidad en cada lote entregado.</p> 
-                <div class="tag-list">
-                    <span>Corazones</span> <span>Medianos</span> <span>Chicos</span> <span>Polvo</span>
-                </div>
-            </div>
-            <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20procesamiento" class="btn btn-outline track-wa-click" target="_blank">Agendar Cita</a>
-        </div>
-
-        <div class="pillar-card">
-            <div class="pillar-icon">
-                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-            </div>
-            <div class="pillar-info">
-                <h2>Especificaciones Técnicas</h2>
-                <p>Revise a detalle nuestras fichas técnicas, gramajes y presentaciones calibradas, ideales para distribución y formulación de repostería.</p> 
-            </div>
-            <a href="catalogo.pdf" class="btn btn-outline" target="_blank">Descargar PDF</a>
-        </div>
-
     </section>
 
     <section class="contact-section" id="cotizacion">
-        <h2>Impulse su Producción</h2>
         <div class="container form-container">
-            <h3 class="form-title">Solicitud de Cotización Mayorista</h3>
+            <h2>Cotización Comercial</h2>
             
             <!-- Kept exactly as configured for GTM and Formspree -->
             <form id="lead-capture-form" action="https://formspree.io/f/myegpyng" method="POST">
                 
                 <div class="form-group">
-                    <input type="text" id="contact-name" name="Nombre" placeholder="Nombre completo del comprador" required>
+                    <input type="text" id="contact-name" name="Nombre" placeholder="Nombre completo" required>
                 </div>
                 <div class="form-group">
                     <input type="text" id="business-name" name="Empresa" placeholder="Empresa o Panadería" required>
@@ -476,27 +456,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="form-group">
                     <select id="volume-estimate" name="Volumen" required>
-                        <option value="">Seleccione el volumen estimado...</option>
-                        <option value="Muestras">Muestras para pruebas de calidad</option>
-                        <option value="Menor a 100kg">Menor a 100 kg mensuales</option>
-                        <option value="100kg a 500kg">100 kg - 500 kg mensuales</option>
-                        <option value="Volumen Industrial">Volumen Industrial / Tarimas (500kg+)</option>
+                        <option value="">Volumen estimado...</option>
+                        <option value="Muestras">Muestras para pruebas</option>
+                        <option value="Menor a 100kg">Menor a 100 kg</option>
+                        <option value="100kg a 500kg">100 kg - 500 kg</option>
+                        <option value="Volumen Industrial">Volumen Industrial / Tarimas</option>
                     </select>
                 </div>
-                <button type="submit" class="btn form-submit-btn">Enviar Requerimientos</button>
+                <button type="submit" class="btn form-submit-btn">Solicitar Cotización</button>
             </form>
-
         </div>
     </section>
 
     <footer id="contacto">
         <div class="container">
-            <h3 class="footer-logo">LA SONRISA</h3>
-            <p>Suministro agroindustrial de alto rendimiento.</p> 
+            <div class="footer-logo">LA SONRISA</div>
+            <p>Más que un alimento, un recordatorio de que lo auténtico siempre deja un buen sabor.</p> 
             <div class="footer-details">
                 <p>Terrapark Parque Industrial • Santa Catarina, Nuevo León CP 66367</p>
-                <p>Ventas B2B: <a href="tel:+528114112100" class="track-call-click">+52 811 411 2100</a></p>
-                <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 La Sonrisa. Todos los derechos reservados.</p>
+                <p>Tel: <a href="tel:+528114112100" class="track-call-click">+52 811 411 2100</a></p>
+                <p style="margin-top: 15px; font-size: 0.8rem;">&copy; 2026 La Sonrisa. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
