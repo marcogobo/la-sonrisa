@@ -104,8 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- HERO SECTION --- */
         .hero {
-            /* Updated to pecan halves placeholder */
-            background: linear-gradient(rgba(59, 42, 33, 0.6), rgba(59, 42, 33, 0.8)), url('https://images.unsplash.com/photo-1612548231018-09559c394e1e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(59, 42, 33, 0.6), rgba(59, 42, 33, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
             padding: 200px 0 140px; 
             color: var(--brand-beige); 
             text-align: center;
@@ -156,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: translateY(-2px);
         }
 
-        /* --- ESSENCE SECTION --- */
+        /* --- ESSENCE SECTION (NEW) --- */
         .essence {
             padding: 100px 0;
             display: grid;
@@ -223,10 +222,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-position: center;
         }
 
-        /* Updated to specific requested imagery */
-        .img-1 { background-image: url('https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?q=80&w=800&auto=format&fit=crop'); } /* Orchard */
-        .img-2 { background-image: url('https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=800&auto=format&fit=crop'); } /* Industrial Sorting Machinery */
-        .img-3 { background-image: url('https://images.unsplash.com/photo-1536585141040-4f51eeb22602?q=80&w=800&auto=format&fit=crop'); } /* Assortment of nuts */
+        .img-1 { background-image: url('https://images.unsplash.com/photo-1628189851614-232a93902f23?q=80&w=800&auto=format&fit=crop'); }
+        .img-2 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'); }
+        .img-3 { background-image: url('https://images.unsplash.com/photo-1563804473852-c0e09d13dbb3?q=80&w=800&auto=format&fit=crop'); }
 
         .pillar-info {
             padding: 30px;
@@ -388,7 +386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>La Sonrisa nace en México con la idea de compartir la felicidad de lo natural. Cada nuez es un recordatorio de origen, sabor y bienestar, pensado para disfrutarse en momentos simples de la vida.</p> 
             
             <a href="#cotizacion" class="btn">
-                Solicitar Cotización
+                Solicitar Cotización B2B
             </a>
         </div>
     </section>
@@ -429,8 +427,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pillar-card">
                     <div class="pillar-img img-3"></div>
                     <div class="pillar-info">
-                        <h3>Catálogo</h3>
-                        <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western, Pawnee y Cheyenne) y calibres disponibles para distribución o formulación.</p> 
+                        <h3>Catálogo Técnico</h3>
+                        <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western) y calibres disponibles para distribución o formulación.</p> 
                     </div>
                 </div>
             </div>
@@ -439,7 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="contact-section" id="cotizacion">
         <div class="container form-container">
-            <h2>Cotización</h2>
+            <h2>Cotización Comercial</h2>
             
             <!-- Kept exactly as configured for GTM and Formspree -->
             <form id="lead-capture-form" action="https://formspree.io/f/myegpyng" method="POST">
@@ -448,19 +446,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <input type="text" id="contact-name" name="Nombre" placeholder="Nombre completo" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="business-name" name="Empresa" placeholder="Empresa" required>
+                    <input type="text" id="business-name" name="Empresa" placeholder="Empresa o Panadería" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="contact-email" name="Email" placeholder="Correo electrónico" required>
+                    <input type="email" id="contact-email" name="Email" placeholder="Correo electrónico corporativo" required>
                 </div>
                 <div class="form-group">
                     <input type="tel" id="contact-phone" name="Teléfono" placeholder="Teléfono a 10 dígitos" required>
                 </div>
                 <div class="form-group">
                     <select id="volume-estimate" name="Volumen" required>
-                        <option value="">Volumen estimado al mes...</option>
+                        <option value="">Volumen estimado...</option>
+                        <option value="Muestras">Muestras para pruebas</option>
                         <option value="Menor a 100kg">Menor a 100 kg</option>
-                        <option value="100kg a 500kg">100 kg - 1000 kg</option>
+                        <option value="100kg a 500kg">100 kg - 500 kg</option>
                         <option value="Volumen Industrial">Volumen Industrial / Tarimas</option>
                     </select>
                 </div>
