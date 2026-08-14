@@ -110,16 +110,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(rgba(59, 42, 33, 0.6), rgba(59, 42, 33, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
-            
-            /* Ajustes para ocupar toda la pantalla */
-            min-height: 100vh; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 75px; /* Compensa la barra de navegación fija */
-            
+            min-height: 100vh; /* Hace que la sección cubra el 100% de la pantalla visible */
+            display: flex; /* Permite centrar el contenido fácilmente */
+            align-items: center; /* Centra el texto verticalmente */
+            padding-top: 75px; /* Da espacio para que el menú fijo no tape el texto */
             color: var(--brand-beige); 
             text-align: center;
+        }
+
+        /* Ajuste para que el contenedor dentro del hero se centre bien */
+        .hero .container {
+            margin: 0 auto;
+            width: 100%;
         }
 
         .hero h1 {
@@ -268,21 +270,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .pillar-img {
-            height: 220px;
+            height: 220px; /* La altura base de tus imágenes de columna */
             background-size: cover;
             background-position: center;
         }
 
         .img-1 { background-image: url('https://images.unsplash.com/photo-1628189851614-232a93902f23?q=80&w=800&auto=format&fit=crop'); }
         .img-2 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'); }
-        
-        /* Ajuste para que la imagen del catálogo encaje bien y no se recorte */
-        .img-3 { 
-            background-image: url('Variedades Pintadas.jpeg'); 
-            background-size: contain; 
-            background-repeat: no-repeat;
-            background-color: #ffffff; /* Fondo blanco por si la imagen tiene proporciones distintas */
-        }
+        .img-3 { background-image: url('Variedades Pintadas.jpeg'); }
 
         .pillar-info {
             padding: 30px;
