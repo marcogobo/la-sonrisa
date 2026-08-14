@@ -22,7 +22,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --brand-terracota: #DB643A; 
             --brand-beige: #F3E9DD; 
             --brand-brown: #3B2A21;
-            /* Nuevo color azul claro para el footer */
             --brand-lightblue: #D4E6F1; 
             --wa-green: #25D366;
             --font-heading: 'Montserrat', sans-serif;
@@ -111,7 +110,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(rgba(59, 42, 33, 0.6), rgba(59, 42, 33, 0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
-            padding: 200px 0 140px; 
+            
+            /* Ajustes para ocupar toda la pantalla */
+            min-height: 100vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 75px; /* Compensa la barra de navegación fija */
+            
             color: var(--brand-beige); 
             text-align: center;
         }
@@ -207,7 +213,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .essence-img {
             width: 100%;
             height: 400px;
-            /* Se movió la imagen Stock Foto Sonrisa aquí */
             background: url('Stock Foto Sonrisa.png') center/cover;
             border-radius: 16px;
             box-shadow: var(--shadow-soft);
@@ -268,10 +273,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-position: center;
         }
 
-        /* Imágenes de las columnas actualizadas */
         .img-1 { background-image: url('https://images.unsplash.com/photo-1628189851614-232a93902f23?q=80&w=800&auto=format&fit=crop'); }
         .img-2 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'); }
-        .img-3 { background-image: url('Variedades Pintadas.jpeg'); }
+        
+        /* Ajuste para que la imagen del catálogo encaje bien y no se recorte */
+        .img-3 { 
+            background-image: url('Variedades Pintadas.jpeg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-color: #ffffff; /* Fondo blanco por si la imagen tiene proporciones distintas */
+        }
 
         .pillar-info {
             padding: 30px;
@@ -343,7 +354,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- FOOTER & FLOATING WA --- */
         footer {
-            /* Se actualizó a azul claro y el texto a café */
             background-color: var(--brand-lightblue); 
             color: var(--brand-brown); 
             padding: 60px 0 40px;
@@ -353,14 +363,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .footer-logo img {
             max-height: 40px;
             margin-bottom: 15px;
-            /* Retirada la opacidad para que el logo se vea nítido */
             opacity: 1;
         }
 
         .footer-details {
             margin-top: 20px;
             font-size: 0.95rem;
-            opacity: 0.9; /* Ligeramente más opaco para mejor lectura */
+            opacity: 0.9; 
         }
 
         .footer-details a {
