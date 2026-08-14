@@ -113,7 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
-            z-index: 2001; /* Siempre por encima del menú desplegable */
+            z-index: 2001; 
         }
 
         .menu-toggle span {
@@ -127,17 +127,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* --- SECCIONES TIPO SLIDE (FULL SCREEN) --- */
         .hero, .essence, .pillars, .contact-section {
             min-height: 100vh;
-            min-height: 100dvh; /* dvh soluciona el problema de la barra de direcciones en iOS/Android */
+            min-height: 100dvh; 
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Pilar para centrado en iOS */
             padding-top: 75px; 
             padding-bottom: 40px;
+            width: 100%;
         }
 
+        /* El truco mágico para centrar perfectamente en iOS */
         .hero .container, 
+        .essence .container,
         .pillars .container, 
         .contact-section .container {
-            width: 100%;
+            margin: auto; 
+            width: 90%;
         }
 
         /* --- HERO SECTION --- */
@@ -424,12 +428,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- RESPONSIVE ADJUSTMENTS PARA MÓVIL --- */
         @media (max-width: 900px) {
-            .essence-grid { grid-template-columns: 1fr; text-align: center; }
-            .pillar-grid { grid-template-columns: 1fr; }
-            .hero, .essence, .pillars, .contact-section { 
-                min-height: auto; 
-                padding: 100px 0; 
+            .essence-grid { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                gap: 30px; /* Menor espacio entre foto y texto */
             }
+            .pillar-grid { grid-template-columns: 1fr; }
+            
+            /* Ajustes para que encajen mejor en la pantalla del celular */
+            .essence-img { height: 250px; }
+            .pillar-img { height: 160px; }
+            .section-title { margin-bottom: 30px; font-size: 2.2rem; }
+            .pillar-info { padding: 20px; }
+            .form-container { padding: 30px 20px; }
         }
 
         @media (max-width: 768px) {
@@ -442,7 +453,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: -100%; /* Oculto fuera de la pantalla por defecto */
+                right: -100%; 
                 width: 100%;
                 height: 100vh;
                 height: 100dvh;
@@ -451,7 +462,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 justify-content: center;
                 align-items: center;
                 gap: 40px;
-                transition: right 0.4s ease; /* Animación suave al abrir */
+                transition: right 0.4s ease; 
                 font-size: 1.5rem;
             }
 
@@ -475,9 +486,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             /* Centrado de textos en móvil */
             .hero h1 { font-size: 3rem; }
-            .section-title { font-size: 2rem; }
+            .essence-text h2 { font-size: 2rem; }
             .pillar-info { text-align: center; }
-            .form-container { padding: 40px 20px; }
+            
+            /* Hacemos los botones un poco más pequeños en celular */
+            .btn { padding: 12px 25px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -562,7 +575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="pillar-img img-3"></div>
                     <div class="pillar-info">
                         <h3><a href="#cotizacion" class="card-link">Catálogo Técnico</a></h3>
-                        <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western) y calibres disponibles para distribución o formulación.</p> 
+                        <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades y calibres disponibles para distribución o formulación.</p> 
                         <a href="Catalogo La Sonrisa.pdf" download class="btn-small">Descargar Catálogo</a>
                     </div>
                 </div>
