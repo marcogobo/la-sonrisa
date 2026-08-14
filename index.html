@@ -11,17 +11,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Sonrisa | Naturalmente Feliz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+    <title>La Sonrisa | Nuez Pecana Premium para la Industria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
-        /* --- BRAND COLOR PALETTE --- */
+        /* --- BRAND COLOR PALETTE & VARIABLES --- */
         :root {
             --brand-terracota: #DB643A; 
-            --brand-beige: #F3E9DD; 
-            --brand-brown: #3B2A21; 
-            --text-light: #F3E9DD; 
+            --brand-beige: #F9F4EF; 
+            --brand-brown: #2C1E16; 
+            --brand-accent: #E8835E;
             --wa-green: #25D366;
             --font-main: 'Nunito', sans-serif; 
+            --shadow-soft: 0 12px 40px rgba(44, 30, 22, 0.08);
+            --shadow-hover: 0 20px 50px rgba(44, 30, 22, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -34,33 +40,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family: var(--font-main);
             color: var(--brand-brown); 
             background-color: var(--brand-beige); 
-            line-height: 1.6;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
         a {
             text-decoration: none;
             color: inherit;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         ul { list-style: none; }
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* --- HEADER & NAV (REVERTED TO BEIGE BANNER) --- */
+        /* --- HEADER & NAV --- */
         header {
-            background-color: var(--brand-beige); 
-            padding: 15px 0;
+            background-color: rgba(249, 244, 239, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(59, 42, 33, 0.1);
+            border-bottom: 1px solid rgba(44, 30, 22, 0.05);
         }
 
         nav {
@@ -70,16 +78,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .logo img {
-            height: 70px; 
+            height: 60px; 
             width: auto;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             font-weight: 800; 
             color: var(--brand-brown); 
             text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
         .nav-links a:hover {
@@ -88,25 +98,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 180px 0 120px; 
-            background-color: var(--brand-terracota); 
-            color: var(--brand-beige); 
+            /* Replace the URL below with a high-quality image of your orchard or facility */
+            background: linear-gradient(rgba(44, 30, 22, 0.8), rgba(44, 30, 22, 0.8)), url('https://images.unsplash.com/photo-1599557029584-6997ce0824b2?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            padding: 220px 0 160px; 
+            color: #ffffff; 
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            text-transform: uppercase;
+            margin-bottom: 25px;
+            line-height: 1.05;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--brand-terracota);
         }
 
         .hero p {
-            font-size: 1.4rem;
-            font-weight: 600;
-            max-width: 800px;
-            margin: 0 auto 40px;
+            font-size: 1.3rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* --- BUTTONS --- */
@@ -114,112 +130,145 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 15px 35px;
-            background-color: var(--brand-brown); 
-            color: var(--brand-beige); 
-            border-radius: 50px; 
+            gap: 12px;
+            padding: 16px 40px;
+            background-color: var(--brand-terracota); 
+            color: #ffffff; 
+            border-radius: 8px; 
             font-weight: 800;
-            font-size: 1.2rem;
-            transition: 0.3s;
-            border: 2px solid var(--brand-brown);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--brand-terracota);
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: transparent;
-            color: var(--brand-brown);
-            transform: translateY(-2px);
+            background-color: var(--brand-accent);
+            border-color: var(--brand-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(219, 100, 58, 0.4);
         }
 
-        .btn-whatsapp {
-            background-color: var(--wa-green);
-            color: white;
-            border-color: var(--wa-green);
+        .btn-outline {
+            background-color: transparent;
+            color: var(--brand-brown);
+            border-color: var(--brand-brown);
         }
-        
-        .btn-whatsapp:hover {
-            background-color: white;
-            color: var(--wa-green);
+
+        .btn-outline:hover {
+            background-color: var(--brand-brown);
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(44, 30, 22, 0.3);
         }
 
         /* --- PILLAR SECTIONS --- */
-        .pillars { padding: 80px 0; }
+        .pillars { padding: 100px 0; }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            color: var(--brand-terracota); 
-            margin-bottom: 50px;
+            font-size: 2.8rem;
+            color: var(--brand-brown); 
+            margin-bottom: 60px;
             font-weight: 900;
+            letter-spacing: -0.5px;
         }
 
         .pillar-card {
             background: #ffffff;
-            border-radius: 20px; 
-            padding: 40px;
-            margin-bottom: 40px;
+            border-radius: 16px; 
+            padding: 45px;
+            margin-bottom: 30px;
             display: grid;
-            grid-template-columns: 100px 1fr 220px; 
+            grid-template-columns: 80px 1fr 220px; 
             align-items: center;
-            gap: 30px;
-            box-shadow: 0 10px 30px rgba(59, 42, 33, 0.08);
-            border-left: 8px solid var(--brand-terracota); 
-            transition: 0.3s;
+            gap: 40px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         .pillar-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 12px 40px rgba(59, 42, 33, 0.12);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .pillar-icon {
-            font-size: 3.5rem;
-            text-align: center;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(219, 100, 58, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-terracota);
+        }
+
+        .pillar-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: currentColor;
         }
 
         .pillar-card h2 {
             color: var(--brand-brown); 
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 1.8rem;
             font-weight: 900;
         }
 
         .pillar-card p {
-            font-size: 1.1rem;
-            color: var(--brand-brown); 
-            opacity: 0.8;
-            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: #555; 
+            margin-bottom: 15px;
         }
 
         .tag-list {
-            font-size: 0.9rem;
-            font-weight: 800;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag-list span {
+            background-color: var(--brand-beige);
             color: var(--brand-terracota);
-            margin-bottom: 15px;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
         }
 
         /* --- CONTACT FORM --- */
         .contact-section {
-            padding: 80px 0;
-            background-color: #ffffff;
+            padding: 100px 0;
+            background-color: var(--brand-brown);
+            color: #ffffff;
         }
 
         .form-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
-            background: var(--brand-beige);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(59, 42, 33, 0.08);
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
 
-        .form-container h2 {
+        .contact-section h2 {
             text-align: center;
-            color: var(--brand-terracota);
-            margin-bottom: 20px;
-            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
             font-weight: 900;
+        }
+
+        .form-title {
+            text-align: center;
+            color: var(--brand-brown);
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: 800;
         }
 
         .form-group {
@@ -229,68 +278,101 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .form-group input, 
         .form-group select {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
+            padding: 16px;
+            border: 2px solid #EEEEEE;
+            border-radius: 8px;
             font-family: var(--font-main);
             font-size: 1rem;
             color: var(--brand-brown);
+            background-color: #FAFAFA;
+            transition: 0.3s;
         }
 
         .form-group input:focus, 
         .form-group select:focus {
             outline: none;
             border-color: var(--brand-terracota);
+            background-color: #ffffff;
         }
 
         .form-submit-btn {
             width: 100%;
-            border: none;
+            margin-top: 10px;
         }
 
         /* --- FOOTER & FLOATING WA --- */
         footer {
-            background-color: var(--brand-brown); 
-            color: var(--brand-beige); 
-            padding: 50px 0;
+            background-color: #1A120D; 
+            color: rgba(255,255,255,0.7); 
+            padding: 60px 0 40px;
             text-align: center;
-            font-weight: 600;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            opacity: 0.5;
         }
 
         .footer-details {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            margin-top: 25px;
+            font-size: 0.95rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-details a {
+            color: #ffffff;
+            font-weight: 800;
         }
 
         .floating-wa {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             z-index: 1000;
-            display: block;
-            width: 70px;
-            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
             background-color: var(--wa-green);
             border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            padding: 15px;
-            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
+        .floating-wa svg {
+            width: 35px;
+            height: 35px;
+        }
+
         .floating-wa:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
         }
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
-        @media (max-width: 768px) {
-            .nav-links { display: none; } 
-            .hero h1 { font-size: 2.8rem; }
+        @media (max-width: 900px) {
             .pillar-card {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding: 30px;
+                padding: 40px 30px;
+                gap: 25px;
             }
-            .pillar-icon { margin-bottom: 10px; }
+            .pillar-icon { 
+                margin: 0 auto; 
+            }
+            .tag-list {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } 
+            .hero { padding: 160px 0 100px; }
+            .hero h1 { font-size: 3rem; }
+            .contact-section h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -304,6 +386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <nav>
                 <div class="logo">
+                    <!-- Assuming you have a logo image, otherwise you can use text -->
                     <img src="logo-dark.png" alt="La Sonrisa Logo">
                 </div>
                 <ul class="nav-links">
@@ -317,79 +400,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="hero">
         <div class="container">
-            <h1>NATURALMENTE FELIZ</h1> 
-            <p>La Sonrisa nace en México con la idea de compartir la felicidad de lo natural. Cada nuez es un recordatorio de origen, sabor y bienestar, pensado para disfrutarse en momentos simples de la vida.</p> 
+            <h1>Calidad Industrial.<br><span>Origen Natural.</span></h1> 
+            <p>Suministro confiable de nuez pecana premium para la industria alimentaria. Procesamiento de alto volumen diseñado para superar los estándares de su negocio.</p> 
             
-            <a href="https://wa.me/528114112100" class="btn btn-whatsapp track-wa-click" target="_blank">
-                Haz tu pedido
+            <a href="#cotizacion" class="btn">
+                Solicitar Cotización B2B
             </a>
         </div>
     </section>
 
     <section class="pillars container" id="productos">
         
-        <h2 class="section-title">Hechas para compartir</h2> 
+        <h2 class="section-title">Soluciones Comerciales</h2> 
 
         <div class="pillar-card" id="origen">
-            <div class="pillar-icon">🇲🇽</div>
-            <div class="pillar-info">
-                <h2>Cosecha Mexicana</h2> 
-                <p>Nuez pecana de la más alta calidad, cultivada con calidez y dedicación. Ofrecemos suministro confiable para socios comerciales.</p> 
-                <p class="tag-list">Variedades: Wichita • Western • Pawnee • Cheyenne</p>
+            <div class="pillar-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
             </div>
-            <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20ventas%20comerciales" class="btn track-wa-click" target="_blank">Cotizar</a>
+            <div class="pillar-info">
+                <h2>Cosecha 100% Mexicana</h2> 
+                <p>Abastecimiento estable de nuez pecana cultivada con dedicación. Desarrollamos relaciones sólidas para garantizar el suministro a su cadena de producción.</p> 
+                <div class="tag-list">
+                    <span>Wichita</span> <span>Western</span> <span>Pawnee</span> <span>Cheyenne</span>
+                </div>
+            </div>
+            <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20ventas%20comerciales" class="btn btn-outline track-wa-click" target="_blank">Contactar</a>
         </div>
 
         <div class="pillar-card">
-            <div class="pillar-icon">🌿</div>
-            <div class="pillar-info">
-                <h2>Nuez Pecana Premium</h2> 
-                <p>Un producto nutritivo y lleno de sabor, procesado con altos estándares para aprovechar al máximo las bondades de la naturaleza.</p> 
-                <p class="tag-list">Calibres: Corazones • Medianos • Chicos • Polvo</p>
+            <div class="pillar-icon">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm4-4H7v-2h9v2zm0-4H7V7h9v2z"/></svg>
             </div>
-            <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20procesamiento" class="btn track-wa-click" target="_blank">Contactar</a>
+            <div class="pillar-info">
+                <h2>Procesamiento Industrial</h2> 
+                <p>Instalaciones modernizadas con cuartos fríos y áreas de limpieza especializadas para garantizar la inocuidad y calidad en cada lote entregado.</p> 
+                <div class="tag-list">
+                    <span>Corazones</span> <span>Medianos</span> <span>Chicos</span> <span>Polvo</span>
+                </div>
+            </div>
+            <a href="https://wa.me/528114112100?text=Hola,%20me%20interesa%20información%20sobre%20procesamiento" class="btn btn-outline track-wa-click" target="_blank">Agendar Cita</a>
         </div>
 
         <div class="pillar-card">
-            <div class="pillar-icon">📄</div>
-            <div class="pillar-info">
-                <h2>Catálogo de Productos</h2>
-                <p>Conoce a detalle todas nuestras presentaciones, gramajes y calibres disponibles para distribución o venta directa.</p> 
+            <div class="pillar-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
             </div>
-            <a href="catalogo.pdf" class="btn btn-whatsapp" target="_blank">Ver Catálogo PDF</a>
+            <div class="pillar-info">
+                <h2>Especificaciones Técnicas</h2>
+                <p>Revise a detalle nuestras fichas técnicas, gramajes y presentaciones calibradas, ideales para distribución y formulación de repostería.</p> 
+            </div>
+            <a href="catalogo.pdf" class="btn btn-outline" target="_blank">Descargar PDF</a>
         </div>
 
     </section>
 
-    <section class="contact-section">
+    <section class="contact-section" id="cotizacion">
+        <h2>Impulse su Producción</h2>
         <div class="container form-container">
-            <h2>Cotización</h2>
+            <h3 class="form-title">Solicitud de Cotización Mayorista</h3>
             
-            <!-- Updated Formspree Endpoint -->
+            <!-- Kept exactly as configured for GTM and Formspree -->
             <form id="lead-capture-form" action="https://formspree.io/f/myegpyng" method="POST">
                 
                 <div class="form-group">
-                    <input type="text" id="contact-name" name="Nombre" placeholder="Nombre completo" required>
+                    <input type="text" id="contact-name" name="Nombre" placeholder="Nombre completo del comprador" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="business-name" name="Empresa" placeholder="Empresa" required>
+                    <input type="text" id="business-name" name="Empresa" placeholder="Empresa o Panadería" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="contact-email" name="Email" placeholder="Correo electrónico" required>
+                    <input type="email" id="contact-email" name="Email" placeholder="Correo electrónico corporativo" required>
                 </div>
                 <div class="form-group">
                     <input type="tel" id="contact-phone" name="Teléfono" placeholder="Teléfono a 10 dígitos" required>
                 </div>
                 <div class="form-group">
-                    <select id="volume-estimate" name="Volumen">
-                        <option value="">Volumen estimado...</option>
-                        <option value="Muestras">Muestras para pruebas</option>
-                        <option value="Menor a 100kg">Menor a 100 kg</option>
-                        <option value="100kg a 500kg">100 kg - 500 kg</option>
-                        <option value="Volumen Industrial">Volumen Industrial / Tarimas</option>
+                    <select id="volume-estimate" name="Volumen" required>
+                        <option value="">Seleccione el volumen estimado...</option>
+                        <option value="Muestras">Muestras para pruebas de calidad</option>
+                        <option value="Menor a 100kg">Menor a 100 kg mensuales</option>
+                        <option value="100kg a 500kg">100 kg - 500 kg mensuales</option>
+                        <option value="Volumen Industrial">Volumen Industrial / Tarimas (500kg+)</option>
                     </select>
                 </div>
-                <button type="submit" class="btn form-submit-btn">Solicitar Cotización</button>
+                <button type="submit" class="btn form-submit-btn">Enviar Requerimientos</button>
             </form>
 
         </div>
@@ -397,16 +491,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <footer id="contacto">
         <div class="container">
-            <p>&copy; 2026 La Sonrisa. Todos los derechos reservados.</p>
-            <p>Más que un alimento, un recordatorio de que lo auténtico siempre deja un buen sabor.</p> 
+            <h3 class="footer-logo">LA SONRISA</h3>
+            <p>Suministro agroindustrial de alto rendimiento.</p> 
             <div class="footer-details">
                 <p>Terrapark Parque Industrial • Santa Catarina, Nuevo León CP 66367</p>
-                <p>Tel: <a href="tel:+528114112100" class="track-call-click" style="text-decoration: underline;">+52 811 411 2100</a></p>
+                <p>Ventas B2B: <a href="tel:+528114112100" class="track-call-click">+52 811 411 2100</a></p>
+                <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 La Sonrisa. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/528114112100" class="floating-wa track-wa-click" target="_blank">
+    <a href="https://wa.me/528114112100" class="floating-wa track-wa-click" target="_blank" aria-label="Contactar por WhatsApp">
         <svg viewBox="0 0 448 512" fill="white"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
 
