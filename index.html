@@ -31,7 +31,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         html { scroll-behavior: smooth; }
 
-        /* Solución al problema del Zoom / Desbordamiento horizontal */
         html, body {
             overflow-x: hidden; 
             width: 100%;
@@ -136,8 +135,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             min-height: 100dvh; 
             display: flex;
             flex-direction: column; 
-            justify-content: center; /* Alineación vertical estricta */
-            align-items: center;     /* Alineación horizontal estricta */
+            justify-content: center; 
+            align-items: center;     
             padding-top: 75px; 
             padding-bottom: 40px;
             width: 100%;
@@ -148,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .pillars .container, 
         .contact-section .container {
             margin: 0 auto; 
-            width: 90%;
+            width: 100%; /* Corregido a 100% para que el padding natural del container actúe */
         }
 
         /* --- HERO SECTION --- */
@@ -170,6 +169,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .hero h1 span {
             color: var(--brand-terracota);
+            display: block; /* Opcional: fuerza a que "Feliz" esté centrado en su propia línea si es necesario en escritorio, aunque aquí mantenemos inline */
         }
 
         .hero p {
@@ -451,7 +451,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .pillar-info { padding: 20px; }
             .form-container { padding: 30px 20px; }
             
-            /* Relajamos el alto en otras secciones para que encaje bien, pero mantenemos el Hero al 100% */
             .essence, .pillars, .contact-section { 
                 min-height: auto; 
                 padding: 100px 0; 
@@ -499,15 +498,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 background-color: var(--brand-terracota);
             }
 
-            /* Alineación milimétrica para móvil en el Hero */
+            /* --- ALINEACIÓN EXACTA PARA EL HERO EN MÓVIL --- */
             .hero h1 { 
-                font-size: 2.8rem; /* Ajustado para que quepa perfecto en la pantalla */
+                /* Tipografía fluida: se ajusta al ancho de la pantalla (vw) con límites seguros */
+                font-size: clamp(1.8rem, 10vw, 2.8rem); 
                 margin-bottom: 15px;
+                word-wrap: break-word; /* Previene que la palabra empuje el contenedor hacia afuera */
+                width: 100%;
             }
+
+            .hero h1 span {
+                display: block; /* Asegura que la palabra "Feliz" caiga perfecta debajo de "Naturalmente" en móviles */
+                margin-top: -5px;
+            }
+
             .hero p {
-                font-size: 1.1rem;
-                padding: 0 10px; /* Margen extra para que no roce los bordes */
+                font-size: 1.05rem;
+                padding: 0 10px; 
             }
+
             .essence-text h2 { font-size: 2rem; }
             .pillar-info { text-align: center; }
             
