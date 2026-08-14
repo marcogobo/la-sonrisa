@@ -31,6 +31,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         html { scroll-behavior: smooth; }
 
+        /* Solución al problema del Zoom / Desbordamiento horizontal */
+        html, body {
+            overflow-x: hidden; 
+            width: 100%;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -129,18 +135,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             min-height: 100vh;
             min-height: 100dvh; 
             display: flex;
-            flex-direction: column; /* Pilar para centrado en iOS */
+            flex-direction: column; 
+            justify-content: center; /* Alineación vertical estricta */
+            align-items: center;     /* Alineación horizontal estricta */
             padding-top: 75px; 
             padding-bottom: 40px;
             width: 100%;
         }
 
-        /* El truco mágico para centrar perfectamente en iOS */
         .hero .container, 
         .essence .container,
         .pillars .container, 
         .contact-section .container {
-            margin: auto; 
+            margin: 0 auto; 
             width: 90%;
         }
 
@@ -158,6 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.1;
             text-transform: uppercase;
             letter-spacing: -1px;
+            text-align: center;
         }
 
         .hero h1 span {
@@ -170,6 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             max-width: 750px;
             margin: 0 auto 40px;
             opacity: 0.9;
+            text-align: center;
         }
 
         /* --- BUTTONS --- */
@@ -188,6 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transition: all 0.3s ease;
             border: 2px solid var(--brand-terracota);
             cursor: pointer;
+            margin: 0 auto;
         }
 
         .btn:hover {
@@ -431,25 +441,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .essence-grid { 
                 grid-template-columns: 1fr; 
                 text-align: center; 
-                gap: 30px; /* Menor espacio entre foto y texto */
+                gap: 30px; 
             }
             .pillar-grid { grid-template-columns: 1fr; }
             
-            /* Ajustes para que encajen mejor en la pantalla del celular */
             .essence-img { height: 250px; }
             .pillar-img { height: 160px; }
             .section-title { margin-bottom: 30px; font-size: 2.2rem; }
             .pillar-info { padding: 20px; }
             .form-container { padding: 30px 20px; }
+            
+            /* Relajamos el alto en otras secciones para que encaje bien, pero mantenemos el Hero al 100% */
+            .essence, .pillars, .contact-section { 
+                min-height: auto; 
+                padding: 100px 0; 
+            }
+            .hero {
+                min-height: 100vh;
+                min-height: 100dvh;
+            }
         }
 
         @media (max-width: 768px) {
-            /* Activamos el ícono hamburguesa */
             .menu-toggle {
                 display: flex;
             }
 
-            /* Estilos del menú desplegable */
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -466,12 +483,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 font-size: 1.5rem;
             }
 
-            /* Clase que se activa con JS para mostrar el menú */
             .nav-links.nav-active {
                 right: 0;
             }
 
-            /* Animación del ícono hamburguesa a una "X" */
             .menu-toggle.toggle-active span:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
                 background-color: var(--brand-terracota);
@@ -484,12 +499,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 background-color: var(--brand-terracota);
             }
 
-            /* Centrado de textos en móvil */
-            .hero h1 { font-size: 3rem; }
+            /* Alineación milimétrica para móvil en el Hero */
+            .hero h1 { 
+                font-size: 2.8rem; /* Ajustado para que quepa perfecto en la pantalla */
+                margin-bottom: 15px;
+            }
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 10px; /* Margen extra para que no roce los bordes */
+            }
             .essence-text h2 { font-size: 2rem; }
             .pillar-info { text-align: center; }
             
-            /* Hacemos los botones un poco más pequeños en celular */
             .btn { padding: 12px 25px; font-size: 1rem; }
         }
     </style>
@@ -515,7 +536,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><a href="https://wa.me/528114112100" target="_blank" class="track-wa-click">Contacto</a></li>
                 </ul>
 
-                <!-- Ícono de Menú Hamburguesa -->
                 <div class="menu-toggle">
                     <span></span>
                     <span></span>
@@ -638,13 +658,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const navLinks = document.querySelector('.nav-links');
         const links = document.querySelectorAll('.nav-links li a');
 
-        // Abre y cierra el menú al tocar la hamburguesa
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
             menuToggle.classList.toggle('toggle-active');
         });
 
-        // Cierra el menú automáticamente cuando se hace clic en una opción
         links.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('nav-active');
