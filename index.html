@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Sonrisa | Naturalmente Feliz</title>
     
-    <!-- Modern Typography: Montserrat for headings (warm/geometric), Inter for body (sleek/readable) -->
+    <!-- Modern Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
     
     <style>
@@ -81,9 +81,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             align-items: center;
         }
 
-        /* Estilos actualizados para el Logo en el Header */
+        /* Estilos para el nuevo Logo */
+        .logo a {
+            display: flex;
+            align-items: center;
+        }
+        
         .logo img {
-            max-height: 45px; /* Puedes ajustar este número si lo quieres más grande o pequeño */
+            max-height: 45px; /* Puedes ajustar este valor si lo quieres más grande o pequeño */
             width: auto;
             display: block;
         }
@@ -168,6 +173,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transition: all 0.3s ease;
             border: 2px solid var(--brand-terracota);
             cursor: pointer;
+            
+            /* Importante: Mantiene el botón clickeable por encima de la tarjeta interactiva */
+            position: relative;
+            z-index: 2; 
         }
 
         .btn-small:hover {
@@ -204,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: var(--shadow-soft);
         }
 
-        /* --- PILLAR SECTIONS --- */
+        /* --- PILLAR SECTIONS (COLUMNS) --- */
         .pillars { 
             padding: 80px 0; 
             background-color: #ffffff;
@@ -224,16 +233,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gap: 30px;
         }
 
+        /* Ajustes para hacer la tarjeta clickeable */
         .pillar-card {
             background: var(--brand-beige);
             border-radius: 16px; 
             overflow: hidden;
             box-shadow: var(--shadow-soft);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* Necesario para que el link extendido funcione */
         }
 
         .pillar-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(59, 42, 33, 0.15); /* Sombra más fuerte al hacer hover para notar interacción */
+        }
+
+        /* El truco del enlace invisible (Stretched Link) */
+        .card-link {
+            color: var(--brand-terracota);
+            text-decoration: none;
+        }
+        
+        .card-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1; /* Esto estira el link por toda la tarjeta */
         }
 
         .pillar-img {
@@ -251,7 +279,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .pillar-card h3 {
-            color: var(--brand-terracota); 
             margin-bottom: 10px;
             font-size: 1.4rem;
         }
@@ -323,12 +350,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: center;
         }
 
-        /* Estilos actualizados para el Logo en el Footer */
         .footer-logo img {
-            max-height: 55px; /* Un poco más grande en el footer, puedes ajustarlo */
-            width: auto;
-            margin: 0 auto 15px auto;
-            display: block;
+            max-height: 40px;
+            margin-bottom: 15px;
+            opacity: 0.9;
         }
 
         .footer-details {
@@ -389,8 +414,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <!-- Aquí se agregó tu logo -->
-                    <a href="#"><img src="logo-dark.png" alt="La Sonrisa"></a>
+                    <a href="#">
+                        <img src="logo-dark.png" alt="La Sonrisa Logo">
+                    </a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#esencia">Esencia</a></li>
@@ -426,27 +452,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="section-title">Hechas para compartir</h2> 
 
             <div class="pillar-grid">
+                <!-- Card 1 -->
                 <div class="pillar-card">
                     <div class="pillar-img img-1"></div>
                     <div class="pillar-info">
-                        <h3>Cosecha Mexicana</h3> 
+                        <!-- El link con clase 'card-link' hace interactiva toda la tarjeta -->
+                        <h3><a href="#cotizacion" class="card-link">Cosecha Mexicana</a></h3> 
                         <p>Nuez pecana de la más alta calidad, cultivada con calidez y dedicación. Ofrecemos suministro confiable para socios comerciales y la industria alimentaria.</p> 
                     </div>
                 </div>
 
+                <!-- Card 2 -->
                 <div class="pillar-card">
                     <div class="pillar-img img-2"></div>
                     <div class="pillar-info">
-                        <h3>Procesamiento Industrial</h3> 
+                        <h3><a href="#cotizacion" class="card-link">Procesamiento Industrial</a></h3> 
                         <p>Infraestructura moderna que garantiza la inocuidad y calidad en cada lote. Un producto nutritivo y lleno de sabor, procesado con altos estándares.</p> 
                     </div>
                 </div>
 
+                <!-- Card 3 -->
                 <div class="pillar-card">
                     <div class="pillar-img img-3"></div>
                     <div class="pillar-info">
-                        <h3>Catálogo Técnico</h3>
+                        <h3><a href="#cotizacion" class="card-link">Catálogo Técnico</a></h3>
                         <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western) y calibres disponibles para distribución o formulación.</p> 
+                        <!-- Botón z-index: 2 para que mantenga su función de descarga -->
                         <a href="Catalogo La Sonrisa.pdf" download class="btn-small">Descargar Catálogo</a>
                     </div>
                 </div>
@@ -487,9 +518,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <footer id="contacto">
         <div class="container">
+            <!-- Logo también añadido al footer de manera opcional -->
             <div class="footer-logo">
-                <!-- Aquí también se agregó tu logo -->
-                <img src="logo-dark.png" alt="La Sonrisa">
+                <img src="logo-dark.png" alt="La Sonrisa Logo">
             </div>
             <p>Más que un alimento, un recordatorio de que lo auténtico siempre deja un buen sabor.</p> 
             <div class="footer-details">
