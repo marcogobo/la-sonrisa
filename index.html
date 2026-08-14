@@ -21,7 +21,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         :root {
             --brand-terracota: #DB643A; 
             --brand-beige: #F3E9DD; 
-            --brand-brown: #3B2A21; 
+            --brand-brown: #3B2A21;
+            /* Nuevo color azul claro para el footer */
+            --brand-lightblue: #D4E6F1; 
             --wa-green: #25D366;
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Inter', sans-serif; 
@@ -81,14 +83,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             align-items: center;
         }
 
-        /* Estilos para el nuevo Logo */
         .logo a {
             display: flex;
             align-items: center;
         }
         
         .logo img {
-            max-height: 45px; /* Puedes ajustar este valor si lo quieres más grande o pequeño */
+            max-height: 45px; 
             width: auto;
             display: block;
         }
@@ -173,8 +174,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transition: all 0.3s ease;
             border: 2px solid var(--brand-terracota);
             cursor: pointer;
-            
-            /* Importante: Mantiene el botón clickeable por encima de la tarjeta interactiva */
             position: relative;
             z-index: 2; 
         }
@@ -208,7 +207,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .essence-img {
             width: 100%;
             height: 400px;
-            background: url('https://images.unsplash.com/photo-1596489815418-2c6c4c015b6d?q=80&w=1000&auto=format&fit=crop') center/cover;
+            /* Se movió la imagen Stock Foto Sonrisa aquí */
+            background: url('Stock Foto Sonrisa.png') center/cover;
             border-radius: 16px;
             box-shadow: var(--shadow-soft);
         }
@@ -233,22 +233,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gap: 30px;
         }
 
-        /* Ajustes para hacer la tarjeta clickeable */
         .pillar-card {
             background: var(--brand-beige);
             border-radius: 16px; 
             overflow: hidden;
             box-shadow: var(--shadow-soft);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative; /* Necesario para que el link extendido funcione */
+            position: relative; 
         }
 
         .pillar-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(59, 42, 33, 0.15); /* Sombra más fuerte al hacer hover para notar interacción */
+            box-shadow: 0 15px 40px rgba(59, 42, 33, 0.15); 
         }
 
-        /* El truco del enlace invisible (Stretched Link) */
         .card-link {
             color: var(--brand-terracota);
             text-decoration: none;
@@ -261,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 1; /* Esto estira el link por toda la tarjeta */
+            z-index: 1; 
         }
 
         .pillar-img {
@@ -270,9 +268,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background-position: center;
         }
 
-        .img-1 { background-image: url('Stock Foto Sonrisa.png'); }
+        /* Imágenes de las columnas actualizadas */
+        .img-1 { background-image: url('https://images.unsplash.com/photo-1628189851614-232a93902f23?q=80&w=800&auto=format&fit=crop'); }
         .img-2 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'); }
-        .img-3 { background-image: url('https://images.unsplash.com/photo-1563804473852-c0e09d13dbb3?q=80&w=800&auto=format&fit=crop'); }
+        .img-3 { background-image: url('Variedades Pintadas.jpeg'); }
 
         .pillar-info {
             padding: 30px;
@@ -344,8 +343,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* --- FOOTER & FLOATING WA --- */
         footer {
-            background-color: var(--brand-brown); 
-            color: var(--brand-beige); 
+            /* Se actualizó a azul claro y el texto a café */
+            background-color: var(--brand-lightblue); 
+            color: var(--brand-brown); 
             padding: 60px 0 40px;
             text-align: center;
         }
@@ -353,13 +353,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .footer-logo img {
             max-height: 40px;
             margin-bottom: 15px;
-            opacity: 0.9;
+            /* Retirada la opacidad para que el logo se vea nítido */
+            opacity: 1;
         }
 
         .footer-details {
             margin-top: 20px;
             font-size: 0.95rem;
-            opacity: 0.8;
+            opacity: 0.9; /* Ligeramente más opaco para mejor lectura */
         }
 
         .footer-details a {
@@ -456,7 +457,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pillar-card">
                     <div class="pillar-img img-1"></div>
                     <div class="pillar-info">
-                        <!-- El link con clase 'card-link' hace interactiva toda la tarjeta -->
                         <h3><a href="#cotizacion" class="card-link">Cosecha Mexicana</a></h3> 
                         <p>Nuez pecana de la más alta calidad, cultivada con calidez y dedicación. Ofrecemos suministro confiable para socios comerciales y la industria alimentaria.</p> 
                     </div>
@@ -477,7 +477,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="pillar-info">
                         <h3><a href="#cotizacion" class="card-link">Catálogo Técnico</a></h3>
                         <p>Conoce a detalle todas nuestras presentaciones, gramajes, variedades (Wichita, Western) y calibres disponibles para distribución o formulación.</p> 
-                        <!-- Botón z-index: 2 para que mantenga su función de descarga -->
                         <a href="Catalogo La Sonrisa.pdf" download class="btn-small">Descargar Catálogo</a>
                     </div>
                 </div>
@@ -518,7 +517,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <footer id="contacto">
         <div class="container">
-            <!-- Logo también añadido al footer de manera opcional -->
             <div class="footer-logo">
                 <img src="logo-dark.png" alt="La Sonrisa Logo">
             </div>
